@@ -1,12 +1,21 @@
+import { useState } from "react"
 import "./styles.css"
 
 export default function App(){
+  const [newItem, setNewItem] = useState("")
+  
+
   return (
     <>{/**adding a fragment since we are returing 2 things (form) and (hi)...react only like 1 return item */}
         <form className="new-item-form">
       <div className="form-row">
         <label htmlFor="item">New Item</label>
-        <input type="text" id="item" />
+        <input 
+        value={newItem} 
+        onChange={e => setNewItem(e.taget.value)} 
+        type="text" 
+        id="item" 
+        />
       </div>
       <button className="btn">Add</button>
     </form>
